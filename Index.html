@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find My TCode</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="code-solid.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <p class="watermr">Rakshit😎</p>
+        <div class="search-box">
+
+                <input id="search" type="text" class="rounded-input" placeholder="Type to Search 🕵️‍♂️" aria-label="Product"
+                    aria-describedby="basic-addon1">
+        </div>
+
+        <div class="table-container" id="table-container">
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th class="col1" scope="col">#</th>
+                        <th class="col2" scope="col">Tcode🛠</th>
+                        <th class="col3" scope="col">Details📄</th>
+                    </tr>
+                </thead>
+                <tbody id='tableContent' class="content-table"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="jscode.js"></script>
+</body>
+
+</html>
