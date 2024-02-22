@@ -1,6 +1,28 @@
+let dis_content = true;
+let sheetName = 'TCode_list';
+const slider = document.querySelector('.switch .slider');
+const switch_text = document.querySelector('.switch-text');
+setupSwitch();
 
+slider.addEventListener('click', function() {
+    dis_content = !dis_content
+    if (dis_content) {
+        switch_text.innerHTML = "Sabka";
+        switch_text.style.color = '#ccc'
+        sheetName = 'TCode_list';
+        setupSwitch();
+
+    }else{
+        switch_text.innerHTML = "Apna"
+        switch_text.style.color = '#2196F3'
+        sheetName = 'TCode_apna'; 
+        setupSwitch();
+    }
+});
+
+function setupSwitch() {
 const spreadsheetId = '1QkX41onUjrmg6dUa8Zv1jYlpft858GjyE2ReyCN2_Uo'
-fetch(`https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json&sheet=TCode_list`)
+fetch(`https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json&sheet=${sheetName}`)
     .then(res => res.text())
     .then(text => {
         const json = JSON.parse(text.substring(47).slice(0, -2))
@@ -53,3 +75,8 @@ fetch(`https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:j
         searchInput.addEventListener('input', filterTable);
 
     });
+
+}
+
+
+
